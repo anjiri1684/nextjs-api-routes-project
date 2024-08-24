@@ -10,17 +10,31 @@ function Notification(props) {
 
   let statusClasses = "";
 
-  if (status === "success") {
-    statusClasses = classes.success;
-  }
+  switch (status) {
+    case "success":
+      statusClasses = classes.success;
+      break;
+    case "error":
+      statusClasses = classes.error;
+      break;
+    case "pending":
+      statusClasses = classes.pending;
+      break;
 
-  if (status === "error") {
-    statusClasses = classes.error;
+    default:
+      break;
   }
+  // if (status === "success") {
+  //   statusClasses = classes.success;
+  // }
 
-  if (status === "pending") {
-    statusClasses = classes.pending;
-  }
+  // if (status === "error") {
+  //   statusClasses = classes.error;
+  // }
+
+  // if (status === "pending") {
+  //   statusClasses = classes.pending;
+  // }
 
   const activeClasses = `${classes.notification} ${statusClasses}`;
 
